@@ -1,6 +1,5 @@
 from cloudshell.workflow.orchestration.sandbox import Sandbox
 from cloudshell.workflow.orchestration.teardown.default_teardown_orchestrator import DefaultTeardownWorkflow
-import Proc_L1ConnectionController as L1ConnectionController
 from Work_Config import WorkConfig
 
 
@@ -9,10 +8,6 @@ def main():
     sandbox = Sandbox()
     DefaultTeardownWorkflow().register(sandbox)
     sandbox.execute_teardown()
-
-    # Additional Setup Process
-    # Connect All L1 Routes
-    L1ConnectionController.ChangeStateOfAllL1Routes("Disconnect")
 
     # Set Config
     # insert code here
